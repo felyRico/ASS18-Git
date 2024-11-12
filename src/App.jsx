@@ -1,17 +1,18 @@
-import { useState } from 'react';
-import './App.css';
+import React, { useState } from 'react';
 
-function App() {
+function ToggleName() {
+  const [showName, setShowName] = useState(false);
+
+  const handleClick = () => {
+    setShowName(!showName);
+  };
+
   return (
-    <>
-    <header>
-      <h1>Rico's Anecdote</h1>
-    </header>
-      <header>
-        
-      </header>
-    </>
+    <div>
+      <button onClick={handleClick}>{showName ? 'Tampilkan' : 'Sembunyikan'}</button>
+      {showName && <p>Nama: RICO</p>}
+    </div>
   );
 }
 
-export default App;
+export default ToggleName;
